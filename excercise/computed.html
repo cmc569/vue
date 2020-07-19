@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>vue js - computed</title>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+
+<div class="aaa">
+sum of total numbers: {{ numberTotal }}
+
+</div>
+
+<script>
+
+var v = new Vue({
+    el: '.aaa',
+    data: {
+        numbers: [5, 8, 3]
+    },
+    methods: {
+
+    },
+    computed: {
+        numberTotal() {
+            return this.numbers.reduce((carrier, item) =>
+                carrier + item
+            );
+        }
+    },
+}) ;
+</script>
+</body>
+</html>
+
+<!--
+v-model
+v-text
+v-html
+v-bind
+class="img-fluid"(bootstrap 4 語法)
+
+v-for="(item, index) in list"
+v-if=(item.age > 25)
+
+v-on:click
+
+vue:
+methods="methods"
+
+v-on == [@]click=
+v-bind == [:]href=
+
+vue:
+computed
+
+
+-->

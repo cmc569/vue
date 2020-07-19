@@ -1,0 +1,58 @@
+<html>
+<head>
+<title>vue js - methods</title>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+
+<div class="aaa">
+{{ codeStatus() }}
+<input type="text" v-model="sn">
+</div>
+
+<script>
+
+var v = new Vue({
+    el: '.aaa',
+    data: {
+        sn: 2
+    },
+    methods: {
+        codeStatus() {
+            let code = this.sn;
+            if (code == 1) return 'Asleep';
+            else if (code == 2) return 'Eating';
+            else if (code == 3) return 'Learning Vue';
+        }
+    },
+    computed: {
+    
+    },
+}) ;
+</script>
+</body>
+</html>
+
+<!--
+v-model
+v-text
+v-html
+v-bind
+class="img-fluid"(bootstrap 4 語法)
+
+v-for="(item, index) in list"
+v-if=(item.age > 25)
+
+v-on:click
+
+vue:
+methods="methods"
+
+v-on == [@]click=
+v-bind == [:]href=
+
+vue:
+computed
+
+
+-->
