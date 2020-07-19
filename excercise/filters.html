@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>vue js - filters</title>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+
+<div class="aaa">
+    <p>Product one cost: {{ productOneCost | formatCost }}</p>
+    <p>Product two cost: {{ formatCost1(productTwoCost) }}</p>
+    <p>Product three cost: {{ (productThreeCost / 100).toFixed(2) }}</p>
+</div>
+
+<script>
+
+var v = new Vue({
+    el: '.aaa',
+    data: {
+        productOneCost: 998,
+        productTwoCost: 2399,
+        productThreeCost: 5300
+    },
+    methods: {
+        formatCost1(value) {
+            return '$' + (value / 100).toFixed(2);
+        }
+    },
+    computed: {
+
+    },
+    watch: {
+
+    },
+    filters: {
+        formatCost(value) {
+            return '$' + (value / 100).toFixed(2);
+        }
+    }
+}) ;
+</script>
+</body>
+</html>
+
+<!--
+v-model
+v-text
+v-html
+v-bind
+class="img-fluid"(bootstrap 4 語法)
+
+v-for="(item, index) in list"
+v-if=(item.age > 25)
+
+v-on:click
+
+vue:
+methods="methods"
+
+v-on == [@]click=
+v-bind == [:]href=
+
+vue:
+computed
+
+vue:
+watch
+
+vue:
+filters
+
+-->

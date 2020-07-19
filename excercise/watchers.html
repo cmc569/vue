@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>vue js - watchers</title>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+
+<div class="aaa">
+<input type="text" v-model="inputValue">
+<p>Five seconds ago, the input said "{{ oldInputValue }}".</p>
+</div>
+
+<script>
+
+var v = new Vue({
+    el: '.aaa',
+    data: {
+        inputValue: '',
+        oldInputValue: ''
+    },
+    methods: {
+
+    },
+    computed: {
+
+    },
+    watch: {
+        inputValue() {
+            let newValue = this.inputValue;
+            console.log(newValue);
+            setTimeout(() => {
+                this.oldInputValue = newValue
+            }, 5000);
+        }
+    }
+}) ;
+</script>
+</body>
+</html>
+
+<!--
+v-model
+v-text
+v-html
+v-bind
+class="img-fluid"(bootstrap 4 語法)
+
+v-for="(item, index) in list"
+v-if=(item.age > 25)
+
+v-on:click
+
+vue:
+methods="methods"
+
+v-on == [@]click=
+v-bind == [:]href=
+
+vue:
+computed
+
+vue:
+watch
+
+-->
